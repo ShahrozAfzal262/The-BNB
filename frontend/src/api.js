@@ -1,4 +1,4 @@
-const API_BASE = "https://the-bnb-backend.vercel.app/api";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "/api";
 const TOKEN_KEY = "roamly-token";
 
 // The login is kept per browser tab (sessionStorage) so a host and a guest can be open in two tabs

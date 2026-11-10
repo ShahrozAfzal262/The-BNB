@@ -19,9 +19,16 @@ if (!process.env.JWT_SECRET) {
 }
 
 app.use(helmet());
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://the-bnb.vercel.app",
+  "https://the-ms1cc5ily-shahrozs-projects-8183a1f3.vercel.app",
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+    origin: allowedOrigins,
   }),
 );
 app.use(express.json({ limit: "1mb" }));
