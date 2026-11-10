@@ -1,0 +1,378 @@
+.experiences-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 40px 48px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #222;
+}
+
+.experiences-section {
+  margin-bottom: 40px;
+}
+
+/* ---------- Heading ---------- */
+.experiences-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.experiences-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.experiences-title h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.experience-heading-arrow {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.experience-heading-arrow:hover {
+  background: #f0f0f0;
+}
+
+.experiences-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.experiences-controls button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.experiences-controls button:hover:not(:disabled) {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transform: scale(1.05);
+}
+
+.experiences-controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.experiences-subtitle {
+  margin: 4px 0 20px;
+  font-size: 15px;
+  color: #6a6a6a;
+}
+
+/* ---------- Rail ---------- */
+.experiences-rail {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 6px;
+  scrollbar-width: none;
+}
+
+.experiences-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.experiences-rail-expanded {
+  flex-wrap: wrap;
+  overflow-x: visible;
+}
+
+/* ---------- Card ---------- */
+.experience-card {
+  flex: 0 0 216px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  scroll-snap-align: start;
+}
+
+.experience-photo {
+  position: relative;
+  aspect-ratio: 1 / 1.05;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #eee;
+  margin-bottom: 6px;
+}
+
+.experience-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.experience-card:hover .experience-photo img {
+  transform: scale(1.04);
+}
+
+.experience-original-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 12px;
+  font-weight: 600;
+  color: #222;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.experience-favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.experience-favorite svg {
+  fill: rgba(0, 0, 0, 0.45);
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.experience-favorite:hover {
+  transform: scale(1.12);
+}
+
+.experience-favorite.is-favorite svg {
+  fill: #ff385c;
+  stroke: #fff;
+}
+
+.experience-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 2; */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.experience-price {
+  font-size: 14px;
+  color: #6a6a6a;
+}
+
+/* ---------- "See all" tile ---------- */
+.experience-see-all {
+  flex: 0 0 216px;
+  aspect-ratio: 1 / 1.05;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  background: #f7f7f7;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.experience-see-all:hover {
+  background: #efefef;
+}
+
+.experience-see-all strong {
+  font-size: 16px;
+}
+
+.see-all-stack {
+  position: relative;
+  width: 110px;
+  height: 80px;
+}
+
+.see-all-stack img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform:
+    translate(-50%, -50%)
+    translateX(calc((var(--stack-index) - 1) * 26px))
+    rotate(calc((var(--stack-index) - 1) * 9deg));
+  z-index: calc(var(--stack-index) + 1);
+}
+
+/* ---------- Next heading ---------- */
+.experiences-next-heading {
+  margin: 40px 0 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .experiences-page {
+    padding: 20px 16px 32px;
+  }
+
+  .experiences-title h1 {
+    font-size: 22px;
+  }
+
+  .experiences-controls {
+    display: none;
+  }
+
+  .experience-card,
+  .experience-see-all {
+    flex-basis: 170px;
+  }
+}
+
+/* ---------- Additions for multi-row page ---------- */
+.experiences-title h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.experiences-next-heading {
+  margin: 48px 0 28px;
+  font-size: 26px;
+}
+
+.experiences-section {
+  margin-bottom: 44px;
+}
+
+.experiences-rail {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Inspiration section ---------- */
+.inspiration {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.inspiration h2 {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.inspiration-tabs {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  border-bottom: 1px solid #e5e5e5;
+  scrollbar-width: none;
+}
+
+.inspiration-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.inspiration-tabs button {
+  flex: none;
+  padding: 0 0 14px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6a6a6a;
+  cursor: pointer;
+}
+
+.inspiration-tabs button:hover {
+  color: #222;
+}
+
+.inspiration-tabs button.is-active {
+  color: #222;
+  font-weight: 600;
+  border-bottom-color: #222;
+}
+
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 22px 24px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inspiration-grid a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.inspiration-grid strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.inspiration-grid span {
+  font-size: 14px;
+  color: #6a6a6a;
+}
+
+.inspiration-grid a:hover strong {
+  text-decoration: underline;
+}
+
+.inspiration-more {
+  margin-top: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  color: #222;
+  cursor: pointer;
+}

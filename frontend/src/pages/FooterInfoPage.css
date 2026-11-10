@@ -1,0 +1,126 @@
+
+/* Main page */
+.footer-info {
+  width: 100%;
+  min-height: 70vh;
+  color: #222222;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* Hero section */
+.footer-info-header {
+  min-height: 350px;
+  padding: 75px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.12)),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600")
+    center/cover no-repeat;
+  color: white;
+}
+
+.footer-info-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.footer-info-header h1 {
+  font-size: clamp(34px, 5vw, 55px);
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+
+.footer-info-intro {
+  max-width: 650px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Content */
+.footer-info-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 55px 35px 75px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px 65px;
+}
+
+.footer-info-section {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.footer-info-section h2,
+.footer-info-related h2 {
+  font-size: 21px;
+  font-weight: 650;
+  margin: 0 0 14px;
+  color: #222222;
+}
+
+.footer-info-section p {
+  color: #626262;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Related links */
+.footer-info-related {
+  grid-column: 1 / -1;
+  padding-top: 10px;
+}
+
+.footer-info-related ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.footer-info-related a {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 30px;
+  color: #222222;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.footer-info-related a:hover {
+  background: #f7f7f7;
+  border-color: #222222;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .footer-info-header {
+    min-height: 280px;
+    padding: 50px 25px;
+  }
+
+  .footer-info-intro {
+    font-size: 16px;
+  }
+
+  .footer-info-content {
+    grid-template-columns: 1fr;
+    padding: 35px 22px 50px;
+    gap: 25px;
+  }
+
+  .footer-info-related {
+    grid-column: auto;
+  }
+}

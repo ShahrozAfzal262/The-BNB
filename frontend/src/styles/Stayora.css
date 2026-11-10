@@ -1,0 +1,163 @@
+/* Links that replaced buttons keep the old look */
+a.heading-arrow, a.hotel-heading-arrow, a.experience-heading-arrow, a.services-heading-arrow,
+a.hotel-see-all-card, a.experience-see-all, a.recent-search-banner, a.hotel-photo, a.service-image-wrap {
+  text-decoration: none; color: inherit;
+}
+.experience-photo-link { display: block; width: 100%; height: 100%; }
+a.experience-title { display: block; color: #292929; font-size: 16px; font-weight: 600; line-height: 1.28; text-decoration: none; padding: 7px 5px 0; }
+a.experience-title:hover, .service-title a:hover { text-decoration: underline; }
+.service-title a { color: inherit; text-decoration: none; }
+.services-title-row { display: flex; align-items: center; gap: 9px; }
+.services-heading-arrow { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; background: #f3f3f3; color: #252525; }
+.services-heading-arrow:hover { background: #e9e9e9; }
+.nearby-rail > p, .hotels-rail > p, .experiences-rail > p { margin: 0; padding: 20px 0; color: #717171; }
+
+/* 2-column list + map */
+.explore-results-layout { grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr); }
+.explore-listings-column { min-width: 0; }
+.explore-listings-column .listing-section { padding: 13px 0 35px; }
+.explore-listings-column .listing-grid, .explore-listings-column .loading-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 27px 17px; }
+.explore-listings-column .stay-image-wrap { aspect-ratio: 1.08 / 1; border-radius: 13px; }
+.results-count-compact { margin: 0 0 16px; font-size: 13px; }
+.explore-map-panel { position: sticky; top: 16px; height: min(80vh, 790px); min-height: 430px; overflow: hidden; border-radius: 15px; }
+.listing-map { width: 100%; height: 100%; min-height: 300px; z-index: 0; }
+.map-price-pin { background: none; border: 0; }
+.map-price-pin span { position: absolute; transform: translate(-50%, -50%); padding: 6px 10px; border-radius: 20px; background: #fff; box-shadow: 0 1px 6px rgb(0 0 0 / 30%); color: #222; font: 700 13px/1 "DM Sans", sans-serif; white-space: nowrap; transition: transform 120ms ease; }
+.map-price-pin:hover span, .map-price-pin.is-active span { transform: translate(-50%, -50%) scale(1.12); background: #222; color: #fff; }
+.map-popup { display: grid; gap: 3px; color: #222; font-size: 12px; text-decoration: none; }
+.map-popup img { width: 100%; height: 110px; border-radius: 10px; object-fit: cover; }
+.leaflet-popup-content { margin: 10px; }
+@media (max-width: 850px) {
+  .explore-results-layout { grid-template-columns: 1fr; }
+  .explore-map-panel { position: relative; top: auto; height: 380px; min-height: 0; }
+}
+
+/* Detail page */
+.detail-back { background: none; border: 0; cursor: pointer; padding: 0; font: inherit; }
+.detail-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin: 14px 0 18px; }
+.detail-heading h1 { margin: 4px 0 8px; }
+.detail-location { display: flex; align-items: center; gap: 6px; margin: 0; color: #555; font-size: 14px; }
+.outline-button.is-saved { color: #e35d68; }
+.detail-gallery { display: grid; gap: 8px; margin-bottom: 28px; overflow: hidden; border-radius: 18px; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 200px); position: relative; }
+.gallery-tile { padding: 0; border: 0; background: #ece9e2; cursor: pointer; overflow: hidden; }
+.gallery-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 300ms ease; }
+.gallery-tile:hover img { transform: scale(1.04); }
+.gallery-tile:first-child { grid-column: span 2; grid-row: span 2; }
+.gallery-1, .gallery-2 { grid-template-columns: 1fr; grid-template-rows: 380px; }
+.gallery-1 .gallery-tile:first-child, .gallery-2 .gallery-tile:first-child { grid-column: auto; grid-row: auto; }
+.gallery-2 .gallery-tile:nth-child(2) { display: none; }
+.gallery-3, .gallery-4 { grid-template-columns: 2fr 1fr; }
+.gallery-3 .gallery-tile:first-child, .gallery-4 .gallery-tile:first-child { grid-column: 1; grid-row: 1 / span 3; }
+.gallery-more { position: absolute; right: 14px; bottom: 14px; padding: 9px 14px; border: 1px solid #222; border-radius: 10px; background: #fff; font-weight: 600; cursor: pointer; }
+@media (max-width: 700px) {
+  .detail-gallery, .gallery-3, .gallery-4 { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 110px; }
+  .gallery-tile:first-child, .gallery-3 .gallery-tile:first-child, .gallery-4 .gallery-tile:first-child { grid-column: span 2; grid-row: 1; }
+  .gallery-tile:nth-child(n+4) { display: none; }
+}
+.lightbox { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: rgb(0 0 0 / 88%); }
+.lightbox > img { max-width: 90vw; max-height: 86vh; border-radius: 10px; object-fit: contain; }
+.lightbox button { position: absolute; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 50%; background: #fff; cursor: pointer; }
+.lightbox-close { top: 18px; right: 18px; }
+.lightbox-prev { left: 18px; }
+.lightbox-next { right: 18px; }
+.lightbox-count { position: absolute; bottom: 16px; color: #fff; font-size: 13px; }
+.detail-map { margin-top: 30px; }
+.detail-map-frame { height: 300px; overflow: hidden; border-radius: 14px; }
+.booking-unavailable { color: #b3261e; }
+.booking-dates-single { grid-template-columns: 1fr; }
+.detail-reviews { color: #717171; }
+
+/* Services: the photo link must be a block, otherwise the image shows at full size */
+.service-image-wrap { display: block; }
+.date-field .date-picker-input { color-scheme: light; }
+
+/* ---- Airbnb-style results page ---- */
+.explore-results-layout { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 28px; }
+.results-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 6px 0 22px; }
+.results-bar h2 { margin: 0; font-size: 22px; font-weight: 700; }
+.all-fees-note { font-size: 15px; font-weight: 500; color: #222; }
+.explore-listings-column .stay-card { font-size: 15px; }
+.explore-listings-column .card-details { gap: 3px 8px; padding-top: 12px; }
+.explore-listings-column .stay-title { font-size: 16px; font-weight: 600; }
+.explore-listings-column .stay-rating { font-size: 14px; }
+.explore-listings-column .stay-subtitle, .explore-listings-column .stay-capacity { grid-column: 1 / -1; font-size: 14px; color: #6a6a6a; }
+.explore-listings-column .stay-price { grid-column: 1 / -1; font-size: 14px; margin-top: 3px; }
+.explore-listings-column .stay-price strong { font-size: 15px; text-decoration: underline; }
+.explore-listings-column .stay-image-wrap { aspect-ratio: 1 / .94; border-radius: 18px; }
+.explore-map-panel { top: 12px; height: calc(100vh - 28px); max-height: 900px; border-radius: 20px; border: 1px solid #ddd; }
+.map-price-pin span { padding: 9px 13px; font-size: 14px; box-shadow: 0 2px 8px rgb(0 0 0 / 28%); }
+.leaflet-container { font-family: "DM Sans", system-ui, sans-serif; background: #f2f2f2; }
+.leaflet-control-zoom { border: 0 !important; box-shadow: 0 2px 8px rgb(0 0 0 / 25%) !important; border-radius: 12px !important; overflow: hidden; }
+.leaflet-control-zoom a { width: 40px !important; height: 40px !important; line-height: 40px !important; font-size: 20px !important; color: #222 !important; }
+.listing-map-wrap { position: relative; width: 100%; height: 100%; }
+.map-world-button { position: absolute; left: 14px; bottom: 28px; z-index: 500; padding: 10px 14px; border: 0; border-radius: 22px; background: #fff; box-shadow: 0 2px 8px rgb(0 0 0 / 28%); font: 600 13px "DM Sans", sans-serif; cursor: pointer; }
+.map-world-button:hover { background: #f4f4f4; }
+
+/* ---- Leaflet fixes: keep the global page styles from breaking the map controls ---- */
+.leaflet-container a { display: inline; }
+.leaflet-control-attribution { padding: 2px 8px !important; font-size: 11px !important; line-height: 1.5 !important; white-space: nowrap; background: rgb(255 255 255 / 85%) !important; }
+.leaflet-control-attribution a { display: inline !important; padding: 0 !important; color: #444; text-decoration: none; }
+.leaflet-control-attribution a:hover { text-decoration: underline; }
+.leaflet-control-zoom { display: flex; flex-direction: column; background: #fff; }
+.leaflet-control-zoom a { display: flex !important; align-items: center; justify-content: center; width: 40px !important; height: 40px !important; padding: 0 !important; line-height: 1 !important; font: 400 22px/1 Arial, sans-serif !important; text-indent: 0 !important; background: #fff !important; color: #222 !important; text-decoration: none; }
+.leaflet-control-zoom a:hover { background: #f3f3f3 !important; }
+.leaflet-control-zoom a + a { border-top: 1px solid #ddd !important; }
+.leaflet-marker-icon.map-price-pin { width: 0 !important; height: 0 !important; margin: 0 !important; background: none !important; border: 0 !important; box-shadow: none !important; outline: none !important; }
+.map-price-pin span { display: inline-block; padding: 7px 12px; box-shadow: 0 1px 5px rgb(0 0 0 / 30%) !important; outline: none; border: 1px solid #fff; }
+.map-price-pin:focus, .map-price-pin span:focus { outline: none; }
+.leaflet-popup-content-wrapper { border-radius: 14px; }
+
+/* ---- Brand: The bnb ---- */
+.bnb-brand { gap: 10px; color: #ff385c; }
+.bnb-logo { width: 40px; height: 40px; display: block; }
+.bnb-name { font: 800 24px "Manrope", "DM Sans", sans-serif; letter-spacing: -1px; color: #ff385c; }
+.brand.bnb-brand img { width: 40px; }
+
+/* ---- Admin page ---- */
+.admin-page { max-width: 1200px; margin: 0 auto; }
+.admin-intro { margin: 0 0 22px; color: #555; }
+.admin-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-bottom: 30px; }
+.admin-card { display: grid; gap: 4px; padding: 18px 20px; border: 1px solid #e6e6e6; border-radius: 16px; background: #fff; }
+.admin-card span { font-size: 13px; color: #6a6a6a; }
+.admin-card strong { font-size: 27px; line-height: 1.1; }
+.admin-card small { color: #8a8a8a; }
+.admin-profit { border-color: #bfe3cb; background: #f2fbf5; }
+.admin-profit strong { color: #167a3c; }
+.admin-loss { border-color: #f3c6c6; background: #fff5f5; }
+.admin-loss strong { color: #c0262d; }
+.admin-section { margin-bottom: 34px; }
+.admin-section h2 { margin: 0 0 14px; font-size: 20px; }
+.admin-chart { display: flex; align-items: flex-end; gap: 18px; height: 220px; padding: 16px 12px 8px; border: 1px solid #e6e6e6; border-radius: 16px; background: #fff; }
+.admin-bar-group { flex: 1; display: grid; gap: 6px; justify-items: center; height: 100%; grid-template-rows: 1fr auto; }
+.admin-bars { display: flex; align-items: flex-end; gap: 4px; width: 100%; height: 100%; justify-content: center; }
+.admin-bars .bar { width: 16px; min-height: 2px; border-radius: 4px 4px 0 0; }
+.bar-gross, .dot-gross { background: #3b82f6; }
+.bar-profit, .dot-profit { background: #22a45d; }
+.bar-loss, .dot-loss { background: #e5484d; }
+.admin-legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 10px 0 0; font-size: 13px; color: #555; align-items: center; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; }
+.admin-table-wrap { overflow-x: auto; border: 1px solid #e6e6e6; border-radius: 16px; background: #fff; }
+.admin-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.admin-table th, .admin-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #f0f0f0; white-space: nowrap; }
+.admin-table th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: #777; background: #fafafa; }
+.admin-table td small { display: block; color: #8a8a8a; }
+.admin-table .positive { color: #167a3c; font-weight: 700; }
+.admin-table .negative { color: #c0262d; }
+.status-pill { padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+.status-confirmed { background: #e3f6ea; color: #167a3c; }
+.status-pending { background: #fff4d6; color: #8a6100; }
+.status-cancelled { background: #fde7e7; color: #c0262d; }
+
+/* Login / sign-up logo */
+.auth-logo { width: 56px !important; height: 56px !important; display: block; margin: 0 auto 10px; }
+.auth-heading img { max-width: 64px; }
+.trip-info h2 a { color: inherit; text-decoration: none; }
+.trip-info h2 a:hover { text-decoration: underline; }
+
+/* Row cards: long locations get "…" instead of running over the next card */
+.recommendation-details { min-width: 0; overflow: hidden; }
+.recommendation-details > span { min-width: 0; overflow: hidden; }
+.rail-loc { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rail-rating { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 3px; margin-left: 2px; }
+.hotel-card-details, .hotel-card-details > *, .experience-title, .experience-price, .service-title { min-width: 0; }
+.hotel-card-details span, .experience-price { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
